@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Ado.NetCategoryProductProject.Models.Student>
+
+@{
+    ViewBag.Title = "ListOfStudent";
+}
+
+<h2>ListOfStudent</h2>
+
+<p>
+    @Html.ActionLink("Create New Student", "CreateNewStudent")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Studentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RollNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Studentname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RollNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "CreateNewStudent", new { id=item.id }) |
+           
+            @Html.ActionLink("Delete", "DeleteStudent", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
